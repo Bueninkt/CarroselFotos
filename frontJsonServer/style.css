@@ -1,0 +1,99 @@
+/* Reset e estilo global */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    height: 100vh;
+    background: linear-gradient(135deg, #89f7fe, #66a6ff); /* degrade futurista */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* Container principal */
+.containerFotos {
+    position: relative;
+    width: 90%;
+    max-width: 1200px;
+    height: 85vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+/* Imagem */
+.containerFotos img {
+    max-width: 100%;
+    max-height: 70vh;
+    border-radius: 25px;
+    object-fit: cover;
+    box-shadow: 0px 20px 50px rgba(0,0,0,0.4);
+    animation: float 6s ease-in-out infinite;
+    transition: transform 0.5s ease, filter 0.4s ease;
+}
+
+.containerFotos img:hover {
+    transform: scale(1.08);
+    filter: brightness(1.15);
+}
+
+/* Título */
+.containerFotos h2 {
+    font-size: 3rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    background: linear-gradient(90deg, #ff9a9e, #fad0c4, #fad390);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 2px 4px 20px rgba(0,0,0,0.3);
+    animation: glow 3s infinite alternate;
+}
+
+/* Legenda estilo glassmorphism */
+.containerFotos p {
+    position: absolute;
+    bottom: 8%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 1rem 2rem;
+    font-size: 1.3rem;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(12px);
+    color: #fff;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+    transition: all 0.4s ease-in-out;
+}
+
+.containerFotos p:hover {
+    background: rgba(255, 255, 255, 0.35);
+    color: #222;
+    transform: translateX(-50%) scale(1.05);
+}
+
+/* Animações */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+@keyframes glow {
+    0% {
+        text-shadow: 0px 0px 10px rgba(255, 154, 158, 0.6);
+    }
+    100% {
+        text-shadow: 0px 0px 20px rgba(250, 211, 196, 0.9);
+    }
+}
